@@ -1,4 +1,4 @@
-package com.afroalko.employee.model.security;
+package com.afroalko.employee.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,6 +34,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/voting").permitAll()
                 .anyRequest().hasRole("ADMIN")
                 .and()
-                .formLogin().permitAll();
+                .formLogin().permitAll()
+                .and()
+                .logout().permitAll();
     }
 }
