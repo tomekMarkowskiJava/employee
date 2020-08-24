@@ -10,7 +10,7 @@ public class Employee {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    private Integer id;
+    private Long id;
     private String name;
     private Integer numberOfVotes;
 
@@ -21,11 +21,11 @@ public class Employee {
         this.name = name;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

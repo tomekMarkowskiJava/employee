@@ -1,5 +1,6 @@
 package com.afroalko.employee.controller;
 
+import com.afroalko.employee.manager.EmployeeManager;
 import com.afroalko.employee.model.Employee;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,16 +12,15 @@ import java.util.List;
 @RestController
 public class VoteController {
 
-    private List<Employee> employees;
+    private EmployeeManager employeeManager;
 
     public VoteController() {
-        this.employees = new ArrayList<>();
-        employees.add(new Employee("Tomek"));
-        employees.add(new Employee("Julia"));
+        employeeManager.add(new Employee("Tomek"));
+        employeeManager.add(new Employee("Julia"));
     }
 
     @GetMapping("/vote")
-    public String showEmployees(){
-        return employees.get(0).getName();
+    public Iterable<Employee> showEmployees(){
+        return employeeManager.findAll();
     }
 }
