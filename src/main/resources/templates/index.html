@@ -7,21 +7,6 @@
 <body>
 Afroalko - employee of the month
 
-<table>
-    <thead>
-    <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Number of votes</th>
-        <th scope="col">Role</th>
-    </tr>
-    </thead>
-    <tbody>
-        <tr th:each="employee: ${employeeList}">
-            <td th:text="${employee.name}"/>
-            <td th:text="${employee.numberofvotes}"/>
-            <td th:text="${employee.role}"/>
-        </tr>
-    </tbody>
-</table>
+<button onclick="window.location.href='/vote'" type="button">Start</button>
 </body>
 </html>

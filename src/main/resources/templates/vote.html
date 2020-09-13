@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:mvc="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>AFRO</title>
+</head>
+<body>
+Afroalko - employee of the month
+
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Number of votes</th>
+        <th scope="col">Role</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="employee: ${employeeList}">
+            <td th:text="${employee.name}"/>
+            <td th:text="${employee.numberOfVotes}"/>
+            <td th:text="${employee.role}"/>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
