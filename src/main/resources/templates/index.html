@@ -17,9 +17,9 @@ Afroalko - employee of the month
     </thead>
     <tbody>
         <tr th:each="employee: ${employeeList}">
-            <td th:text="employee.name"/>
-            <td th:text="employee.numberofvotes"/>
-            <td th:text="employee.role"/>
+            <td th:text="${employee.name}"/>
+            <td th:text="${employee.numberofvotes}"/>
+            <td th:text="${employee.role}"/>
         </tr>
     </tbody>
 </table>
