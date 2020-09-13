@@ -22,4 +22,8 @@ public class EmployeeManager {
     public Iterable<Employee> findAll(){
         return employeeRepo.findAll();
     }
+
+    public void clear() {
+        employeeRepo.deleteAll();
+    }
 }
