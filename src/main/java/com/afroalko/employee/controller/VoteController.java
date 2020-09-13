@@ -14,9 +14,6 @@ public class VoteController {
     @Autowired
     public VoteController(EmployeeManager employeeManager) {
         this.employeeManager = employeeManager;
-        employeeManager.clear();
-        employeeManager.add(new Employee("Tomek", "admin", "admin"));
-        employeeManager.add(new Employee("Julia", "user", "user"));
     }
 
     @GetMapping("/vote")
