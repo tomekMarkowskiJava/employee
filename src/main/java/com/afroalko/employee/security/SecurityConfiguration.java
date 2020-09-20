@@ -31,10 +31,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/vote").permitAll()
+                .antMatchers("/", "/login", "/vote").permitAll()
                 .anyRequest().hasRole("ADMIN")
                 .and()
-                .formLogin().permitAll()
+                .formLogin().loginPage("/login").permitAll()
                 .and()
                 .logout().permitAll();
     }
