@@ -26,4 +26,9 @@ public class VoteController {
         model.addAttribute("employeeList", employeeManager.findAll());
         return "vote";
     }
+
+    @GetMapping("/login")
+    public String login(){
+        return "login";
+    }
 }
