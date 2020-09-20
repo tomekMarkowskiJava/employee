@@ -23,7 +23,7 @@ public class Employee {
         this.name = name;
         this.password = password;
         this.role = role;
-        numberOfVotes = 0;
+        setNumberOfVotes(0);
     }
 
     public Long getId() {
