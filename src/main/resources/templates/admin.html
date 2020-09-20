@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AFRO</title>
+</head>
+<body>
+Afroalko - employee of the month
+
+<div>
+    <form th:action="@{/admin}" th:object="${employee}" method="post">
+        <label>Name: </label>
+        <label>
+            <input type="text" th:field="*{name}" placeholder="Name" name="employee_name"/>
+        </label><br/>
+        <br/>
+        <label>Role </label>
+        <label>
+            <input type="text" th:field="*{password}" placeholder="Password" name="employee_password"/>
+        </label><br/>
+        <br/>
+        <label>Role </label>
+        <label>
+            <input type="text" th:field="*{role}" placeholder="Role" name="employee_role"/>
+        </label><br/>
+        <br/>
+        <input type="submit" value="Add new employee">
+    </form>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Password</th>
+        <th scope="col">Number of votes</th>
+        <th scope="col">Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee: ${employeeList}">
+        <td th:text="${employee.name}"/>
+        <td th:text="${employee.password}"/>
+        <td th:text="${employee.numberOfVotes}"/>
+        <td th:text="${employee.role}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
