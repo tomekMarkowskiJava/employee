@@ -23,6 +23,8 @@ public class EmployeeManager {
         return employeeRepo.findAll();
     }
 
+    public Employee findyByName(String name){return employeeRepo.findByName(name);}
+
     public void clear() {
         employeeRepo.deleteAll();
     }
