@@ -31,7 +31,6 @@ public class AdminController {
     @PostMapping
     public String addEmployee(@ModelAttribute("employee") Employee employee, Model model) {
         employeeManager.add(employee);
-        employee.setNumberOfVotes(0);
         model.addAttribute("employeeList", employeeManager.findAll());
         return "redirect:/admin";
     }

@@ -16,6 +16,7 @@ public class EmployeeManager {
     }
 
     public Employee add(Employee employee){
+        employee.setNumberOfVotes(0);
         return employeeRepo.save(employee);
     }
 
